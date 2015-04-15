@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HangmanDrakeWempe</string>
+    <string name="app_name">The Gallows</string>
     <string name="empty"></string>
-    <string name="action_settings">Settings</string>
+    <string name="reveal_answer">Answer</string>
 
 
     <string name="guess_button">Guess</string>
@@ -11,6 +11,10 @@
     <string name="enter_hint">Enter A Guess</string>
     <string name="question_marks">-??????-</string>
     <string name="guesses_used">Guesses Remaining: 6 </string>
+    <string name="lose_alert_title">You\'ve killed him!</string>
+    <string name="alert_message">Press OK to start a new game</string>
+    <string name="win_alert_title">You\'ve saved him from the gallows!</string>
+
     <string-array name="dictionary"><item>garden</item>
         <item>floor</item>
         <item>technology</item>

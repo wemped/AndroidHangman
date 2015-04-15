@@ -1,5 +1,7 @@
 package com.drakewempe.hangmandrakewempe;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
@@ -61,8 +63,22 @@ public class MainActivity extends ActionBarActivity {
         answer.setText(questionMarks);
         //Load hangman images into an array
         //hangmanImages = getResources().getIntArray(R.array.hangmanImages);
-
-
+        final AlertDialog loseAlert = new AlertDialog.Builder(this).create();
+        loseAlert.setTitle(R.string.lose_alert_title);
+        loseAlert.setMessage(this.getText(R.string.alert_message).toString());
+        loseAlert.setButton("OK",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                resetButton.callOnClick();
+            }
+        });
+        final AlertDialog winAlert = new AlertDialog.Builder(this).create();
+        winAlert.setTitle(R.string.win_alert_title);
+        winAlert.setMessage(this.getText(R.string.alert_message).toString());
+        winAlert.setButton("OK",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                resetButton.callOnClick();
+            }
+        });
         guessButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,11 +100,31 @@ public class MainActivity extends ActionBarActivity {
                     }
                     answer.setText(String.valueOf(answerStatus));
                     usedChars.append(currentGuess);
+                    if (!String.valueOf(answerStatus).contains("?")){
+                        winAlert.show();
+                    }
 
                 }else{
                     usedChars.append(currentGuess);
-                    if (hangmanImageIndex == 6){
-                        //youlose
+                    Log.v("hangmanImageIndex", Integer.toString(hangmanImageIndex));
+                    if (hangmanImageIndex == 5){
+                       // AlertDialog loseAlert = new AlertDialog.Builder(this).create();
+                       /* new AlertDialog.Builder(this)
+                                .setTitle("You've run out of guesses!")
+                                .setMessage("Click OK to begin a new game")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // continue with delete
+                                    }
+                                })
+                                /*.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // do nothing
+                                    }
+                                })
+                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                .show();*/
+                        loseAlert.show();
                     }
                     hangmanImageIndex++;
                     hangmanImageView.setImageResource(hangmanImages[hangmanImageIndex]);
@@ -122,12 +158,18 @@ public class MainActivity extends ActionBarActivity {
                 hangmanImageView.setImageResource(hangmanImages[hangmanImageIndex]);
 
                 usedChars.setText("");
-                guessesUsed.setText(R.string.guesses_used);
+                //guessesUsed.setText(R.string.guesses_used);
+                //DEBUG
+                guessesUsed.setText(currentAnswer);
+                //DEBUG
 
                 //Load hangman images into an array
                 //hangmanImages = getResources().getIntArray(R.array.hangmanImages);
             }
         });
+
+
+
 
 
 
@@ -142,7 +184,7 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -155,5 +197,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
