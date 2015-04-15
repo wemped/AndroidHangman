@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="hangmanImages">
+        <item>@drawable/hangman6</item>
+        <item>@drawable/hangman5</item>
+        <item>@drawable/hangman4</item>
+        <item>@drawable/hangman3</item>
+        <item>@drawable/hangman2</item>
+        <item>@drawable/hangman1</item>
+        <item>@drawable/hangman0</item>
+    </array>
+</resources>

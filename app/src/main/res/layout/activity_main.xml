@@ -5,14 +5,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <ImageButton
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:id="@+id/hangmanImage"
+    <ImageView
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:id="@+id/hangmanImageView"
         android:src="@drawable/hangman6"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignRight="@+id/used"
+        android:layout_alignEnd="@+id/used"
+        android:contentDescription="Hanging Man!" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,11 +21,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/question_marks"
         android:id="@+id/answerText"
-        android:layout_marginBottom="77dp"
-        android:textSize="30dp"
-        android:layout_alignBottom="@+id/hangmanImage"
-        android:layout_alignRight="@+id/newGameButton"
-        android:layout_alignEnd="@+id/newGameButton" />
+        android:layout_marginBottom="79dp"
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/hangmanImageView"
+        android:layout_toRightOf="@+id/guessesUsed"
+        android:layout_toEndOf="@+id/guessesUsed" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
         android:inputType="text"
         android:hint="@string/enter_hint"
         android:layout_marginTop="80dp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/guessesUsed"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -60,7 +61,18 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/guesses_used"
-        android:id="@+id/textView"
+        android:id="@+id/guessesUsed"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/empty"
+        android:id="@+id/used"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/guessesUsed"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

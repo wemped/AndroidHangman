@@ -2,14 +2,15 @@
 <resources>
 
     <string name="app_name">HangmanDrakeWempe</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="empty"></string>
     <string name="action_settings">Settings</string>
+
 
     <string name="guess_button">Guess</string>
     <string name="new_button">New Game</string>
     <string name="enter_hint">Enter A Guess</string>
     <string name="question_marks">-??????-</string>
-    <string name="guesses_used">You have 0 guesses left: </string>
+    <string name="guesses_used">Guesses Remaining: 6 </string>
     <string-array name="dictionary"><item>garden</item>
         <item>floor</item>
         <item>technology</item>
