@@ -8,12 +8,14 @@
 
     <string name="guess_button">Guess</string>
     <string name="new_button">New Game</string>
-    <string name="enter_hint">Enter A Guess</string>
+    <string name="enter_hint">Enter character</string>
     <string name="question_marks">-??????-</string>
-    <string name="guesses_used">Guesses Remaining: 6 </string>
+    <string name="guesses_used">Incorrect guesses remaining:  </string>
     <string name="lose_alert_title">You\'ve killed him!</string>
+    <string name="lose_alert_message">The correct answer was </string>
     <string name="alert_message">Press OK to start a new game</string>
     <string name="win_alert_title">You\'ve saved him from the gallows!</string>
+    <string name="reveal_answer_title">The answer is..</string>
 
     <string-array name="dictionary"><item>garden</item>
         <item>floor</item>
